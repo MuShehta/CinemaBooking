@@ -1,0 +1,33 @@
+﻿@model IEnumerable<CinemaBooking.Models.Movie>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="contanier">
+    <div class="row">
+
+        <div class="row justify-content-around">
+
+            @foreach (var item in Model)
+            {
+
+
+                <div class="col-6 col-lg-3">
+                    <!-- set info of item  -->
+                    <div class="card" style="width: 18rem;margin:3px">
+                        <img class="card-img-top" src="/images/@item.image" alt="Card image cap" style="width: 18rem; height: 24rem; ">
+                        <div class="card-body">
+                            <h5 class="card-title" style="margin-bottom: 0.2rem ">@item.name</h5>
+                            <p class="card-text" style="color: #077d40; margin-bottom: 0.2rem ">@item.cost$</p>
+                            <p class="card-text" style="color: 1e362a; margin-bottom: 0.2rem ">Available places: @item.available_places</p>
+                            <a href="Item/Index/@item.id" class="btn btn-primary">Book it</a>
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+        </div>
+    </div>

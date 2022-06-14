@@ -1,0 +1,43 @@
+﻿@model CinemaBooking.Models.Movie
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<div>
+    <h4>Movie</h4>
+    <hr />
+    <dl class="row">
+
+        <dt class="col-sm-2">
+            @Html.DisplayName("Name")
+        </dt>
+        <dd class="col-sm-10">
+            <h3>@Model.name</h3>
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.image)
+        </dt>
+        <dd class="col-sm-10">
+            <img src="/images/@Model.image" alt="Card image cap" style="width: 18rem; height: 24rem; ">
+        </dd>
+
+        <form method="post">
+            <input type="hidden" name="id" value="@Model.id"/>
+
+            <dt class="col-sm-2">
+                @Html.DisplayName("Email")
+            </dt>
+            <dd class="col-sm-10">
+                <input type="email" name="email" required/>
+            </dd>
+
+            <input type="submit" class="btn btn-primary" value="Book it"/>
+        </form>
+
+
+    </dl>
+</div>
